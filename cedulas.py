@@ -9,6 +9,10 @@ def crearDiccionarioCedulas (nombre):
         cedulas = open(nombre, 'x')
     except FileExistsError:
         print('Error: el archivo %s ya existe' % nombre)
+        return
+    except Exception:
+        print('Error al generar el diccionario')
+        return
 
     for x in range(6000000, -1, -1):
         num = str(x).zfill(7)
